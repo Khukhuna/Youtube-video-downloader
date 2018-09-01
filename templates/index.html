@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1024, maximum-scale=1.0">
 	<title> Youtube Video Downloader :) </title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
-	<h1> Youtube Video Downloader </h1>
+	<div class="wrapper">
+		<i class="fa fa-4x fa-download title"></i>
+		<h1 class="title"> Video Downloader </h1>
+		<div class="input-container">
+			<input type="text" id="videoInput">
+			<button type="button" id="videoSubmit"> Download </button>
+		</div>
+	</div>
+	<script src="{{ url_for('static', filename='js/index.js') }}"></script>
 </body>
 </html>
