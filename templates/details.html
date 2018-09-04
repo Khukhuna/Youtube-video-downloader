@@ -1,0 +1,12 @@
+{% extends "base_template.html" %}
+{% block title %} Download - "{{ title }}" {% endblock %}
+{% block body %}
+<div class="container">
+  {{ videoId }}
+</div>
+
+<script type="text/JavaScript" src="{{ url_for('static', filename='js/getData.js') }}"></script>
+<script>
+  getDataById("{{videoId}}");
+</script>
+{% endblock %}
