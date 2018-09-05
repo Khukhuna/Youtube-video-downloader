@@ -9,6 +9,6 @@ button.addEventListener('click', function(){
   } catch (e) {
     var videoId = inputValue;
   }
-  window.location.replace("/download/"+videoId);
+  window.location.replace("/"+videoId);
   return false;
 });

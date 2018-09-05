@@ -1,9 +1,43 @@
 {% extends "base_template.html" %}
 {% block title %} Download - "{{ title }}" {% endblock %}
 {% block body %}
+{% block head %}
+<script src="{{ url_for('static', filename='js/lib/paper.min.js') }}"></script>
+{% endblock %}
+<script type="text/paperscript" canvas="loading-screen">
+  var width = $('#loading-screen').width();
+
+  var cornerSize = new Size(20, 20);
+
+  var layoutContainer = new Rectangle(new Point(width*0.25, 50), new Point(width*0.78, 80));
+  var layout = new Path.RoundRectangle(layoutContainer , cornerSize);
+  layout.strokeColor = '#FF416C';
+  layout.strokeWidth = 2;
+
+
+  var innerContainer = new Rectangle(new Point(width*0.25+5, 54), new Point(width*0.35, 76));
+  var inner = new Path.RoundRectangle(innerContainer, cornerSize);
+  inner.strokeColor = '#FF416C';
+  inner.strokeWidth = 2;
+  inner.fillColor = '#FF416C';
+
+  function onFrame(event) {
+    if(inner.position.x >= width*0.82){
+      inner.position.x = width*0.3+5;
+    }else{
+      inner.position.x += 2;
+    }
+  }
+
+
+
+</script>
+
 <div class="container">
-  {{ videoId }}
+  <h1 class="text-center header"> Loading... </h1>
+  <canvas id="loading-screen" resize></canvas>
 </div>
+
 
 <script type="text/JavaScript" src="{{ url_for('static', filename='js/getData.js') }}"></script>
 <script>

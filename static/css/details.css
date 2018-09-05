@@ -20,3 +20,12 @@
 .nav.navbar-nav.navbar-right li a {
 	color: #204e57;
 }
+
+#loading-screen {
+	width: 100%;
+}
+
+.header {
+	font-weight: bold;
+	margin-top: 40px;
+}
