@@ -1,31 +1,33 @@
-.navbar-brand {
-	font-size: 175%;
-	font-weight: bold;
-	color: #204e57 !important;
-}
-
-.navbar-default {
-	background-color: white;
-	padding: 10px;
-}
-
-.fa-download {
-  background: #FF416C;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-.nav.navbar-nav.navbar-right li a {
-	color: #204e57;
-}
-
-#loading-screen {
+.full-width {
 	width: 100%;
 }
 
-.header {
+.bold-statement {
 	font-weight: bold;
+}
+
+.details-wrapper {
+	width: 70%;
 	margin-top: 40px;
+}
+
+#details {
+	display: none;
+}
+
+#title {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+	padding-bottom: 16px;
+}
+
+.main-btn {
+	margin-right: 20px;
+	margin-bottom: 10px;
+	background: #FF416C;
+	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	border: none;
+	border-radius: 7px;
+	color: white;
+	padding: 10px;
 }

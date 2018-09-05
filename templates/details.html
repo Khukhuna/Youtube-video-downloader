@@ -1,7 +1,8 @@
 {% extends "base_template.html" %}
-{% block title %} Download - "{{ title }}" {% endblock %}
+{% block title %} Loading... {% endblock %}
 {% block body %}
 {% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/details.css') }}">
 <script src="{{ url_for('static', filename='js/lib/paper.min.js') }}"></script>
 {% endblock %}
 <script type="text/paperscript" canvas="loading-screen">
@@ -34,11 +35,22 @@
 </script>
 
 <div class="container">
-  <h1 class="text-center header"> Loading... </h1>
-  <canvas id="loading-screen" resize></canvas>
+  <div id="loading">
+    <h1 class="text-center bold-statement"> Loading... </h1>
+    <canvas id="loading-screen" class="full-width" resize></canvas>
+  </div>
+  <div id="details" class="full-width">
+    <div id="player" class="center-block"></div>
+    <div class="details-wrapper center-block">
+      <h2 id="title" class="bold-statement"> Hello </h2>
+      <h4 class="text-right"><span class="bold-statement" id="views"></span> views</h4>
+      <h3><span class="bold-statement" id="rating"></span></h3>
+    </div>
+  </div>
 </div>
 
 
+<script src="{{ url_for('static', filename='js/youtube-player.js') }}"></script>
 <script type="text/JavaScript" src="{{ url_for('static', filename='js/getData.js') }}"></script>
 <script>
   getDataById("{{videoId}}");
