@@ -5,11 +5,14 @@ function getDataById(id){
         dataType: "json",
         url: url,
         success: function(data) {
-          data = data['items'][0]['snippet']
+          data = data['items'][0];
+          id = data['id'];
+          data = data['snippet'];
 
           $("#loading").fadeOut();
           $("#details").fadeIn();
           $("#title").text(data['title']);
+          $("#redirect").attr("href", "https://www.youtube.com/watch?v="+id);
 
           var channelLink = 'https://www.youtube.com/channel/' + data['channelId'];
           $("#by").html("<a href='"+channelLink+"'>"+data['channelTitle']+"</a>");
