@@ -43,7 +43,7 @@
     <div id="player" class="center-block"></div>
     <div class="details-wrapper center-block">
       <h2 id="title" class="bold-statement"> Hello </h2>
-      <h4 class="text-right"><span class="bold-statement" id="views"></span> views</h4>
+      <h4 class="text-right">By <span class="bold-statement" id="by"></span></h4>
       <h3><span class="bold-statement" id="rating"></span></h3>
     </div>
   </div>
@@ -53,6 +53,7 @@
 <script src="{{ url_for('static', filename='js/youtube-player.js') }}"></script>
 <script type="text/JavaScript" src="{{ url_for('static', filename='js/getData.js') }}"></script>
 <script>
-  getDataById("{{videoId}}");
+  var id = "{{videoId}}";
+  getDataById(id);
 </script>
 {% endblock %}
